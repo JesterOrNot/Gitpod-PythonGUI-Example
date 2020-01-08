@@ -1,3 +1,8 @@
+FROM gitpod/workspace-full-vnc:latest
+
+USER root
+
+# Install wxPython Dependencies
 RUN apt-get -q update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
         freeglut3-dev \
