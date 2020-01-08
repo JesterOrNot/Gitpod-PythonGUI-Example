@@ -1,12 +1,5 @@
-FROM gitpod/workspace-full-vnc:latest
-
-USER root
-
-ARG DEBIAN_FRONTEND=noninteractive
-
-# Install WXPython Dependencies
 RUN apt-get -q update \
-    && apt-get install -yq \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
         freeglut3-dev \
         python3.7-dev \
         libpython3.7-dev \
@@ -21,7 +14,7 @@ RUN apt-get -q update \
         libgtk2.0-dev \
     && sudo rm -rf /var/lib/apt/lists/*
 
-# Add wxpython itself
+# Add wxPython itself
 
 USER gitpod
 
